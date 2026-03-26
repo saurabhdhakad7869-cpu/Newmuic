@@ -1,3 +1,4 @@
+import asyncio
 import uvloop
 
 uvloop.install()
@@ -23,7 +24,19 @@ class AMBOT(Client):
         )
 
     async def start(self):
-        await super().start()
+        while True:
+            try:
+                await super().start()
+                break
+            except errors.FloodWait as e:
+                LOGGER(__name__).warning(
+                    f"FloodWait: {e.value} seconds wait kar raha hoon automatically..."
+                )
+                await asyncio.sleep(e.value + 5)
+            except Exception as e:
+                LOGGER(__name__).error(f"Bot start failed: {e}")
+                raise
+
         self.id = self.me.id
         self.name = self.me.first_name + " " + (self.me.last_name or "")
         self.username = self.me.username
