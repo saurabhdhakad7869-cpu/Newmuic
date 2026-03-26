@@ -1,10 +1,24 @@
 import asyncio
 
-# Event loop fix for Railway/Python 3.10+
+# Patch uvloop's EventLoopPolicy to be safe on Python 3.10+ before any imports
 try:
-    asyncio.get_event_loop()
-except RuntimeError:
-    asyncio.set_event_loop(asyncio.new_event_loop())
+    import uvloop as _uvloop
+    _orig_policy_get = _uvloop.EventLoopPolicy.get_event_loop
+    def _safe_policy_get(self):
+        try:
+            return _orig_policy_get(self)
+        except RuntimeError:
+            loop = self.new_event_loop()
+            self.set_event_loop(loop)
+            return loop
+    _uvloop.EventLoopPolicy.get_event_loop = _safe_policy_get
+    _uvloop.install()
+except (ImportError, AttributeError):
+    pass
+
+# Force create and set a clean event loop
+_loop = asyncio.new_event_loop()
+asyncio.set_event_loop(_loop)
 
 from AnieXEricaMusic.core.bot import AMBOT
 from AnieXEricaMusic.core.dir import dirr
