@@ -71,8 +71,8 @@ class Userbot(Client):
             self.one.name = (await self.one.get_me()).mention
             self.one.username = (await self.one.get_me()).username
             assistantids.append(self.one.id)
-            ambots = "@MineROBOT"
-            gupta = "@Gupta_876bot"
+            ambots = "@Killua_music_bot"
+            gupta = "@usernametnot"
             try:
                 await self.one.send_message(ambots, f"/start")
                 await self.one.send_message(gupta, f"/start")
