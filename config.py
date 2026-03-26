@@ -15,7 +15,7 @@ MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://aditya0:aditya0@cluster0.9m
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 600))
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID",-1003858465326))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", -1003858465326))
 
 OWNER_ID = int(getenv("OWNER_ID", 7812646657))
 
@@ -32,7 +32,7 @@ UPSTREAM_REPO = getenv(
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv(
     "GIT_TOKEN", None
-)  
+)
 SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/botbykilwakillua")
 SUPPORT_GROUP = getenv("SUPPORT_GROUP", "https://t.me/bothub13")
 AUTO_LEAVING_ASSISTANT = bool(getenv("AUTO_LEAVING_ASSISTANT", True))
@@ -42,7 +42,7 @@ PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", 25))
 TG_AUDIO_FILESIZE_LIMIT = int(getenv("TG_AUDIO_FILESIZE_LIMIT", 5242880000))
 TG_VIDEO_FILESIZE_LIMIT = int(getenv("TG_VIDEO_FILESIZE_LIMIT", 5242880000))
 
-STRING1 = getenv("STRING_SESSION", "BQFMsJ0AZkF_6FO_QOXYM4xr2LTqA9bHWXlZ-qlbe1z59MgkyijM6fPoqPcm86R33T9hwOa8zo0-rJjfEw_M16m37hieo7NiFBH4T_QZGGi2WgIHAZtrIiN4gDkJWP4cNLMFn5kayYRyYW3M16W1phOeecUzhAmwRswx8Zf0jhYc0DJnCNVVbuZZ298obPA5GmuaqS5MJSayndomFXJEMcCxXawW4gS0M6S5DlI-HezzayE8Z7HZJajcbzEiKaApaxr-1h5ycwFZi6TR5E0H9r7PiDiPUABgRm0enJ2UF-B1bQ74EKa-wHiL7jwEQJhlUAHDMXbqmuZwht5DaeyTpnfAjljtRgAAAAH33Bx_AA"
+STRING1 = getenv("STRING_SESSION", "BQFMsJ0AZkF_6FO_QOXYM4xr2LTqA9bHWXlZ-qlbe1z59MgkyijM6fPoqPcm86R33T9hwOa8zo0-rJjfEw_M16m37hieo7NiFBH4T_QZGGi2WgIHAZtrIiN4gDkJWP4cNLMFn5kayYRyYW3M16W1phOeecUzhAmwRswx8Zf0jhYc0DJnCNVVbuZZ298obPA5GmuaqS5MJSayndomFXJEMcCxXawW4gS0M6S5DlI-HezzayE8Z7HZJajcbzEiKaApaxr-1h5ycwFZi6TR5E0H9r7PiDiPUABgRm0enJ2UF-B1bQ74EKa-wHiL7jwEQJhlUAHDMXbqmuZwht5DaeyTpnfAjljtRgAAAAH33Bx_AA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -88,4 +88,4 @@ if SUPPORT_GROUP:
     if not re.match("(?:http|https)://", SUPPORT_GROUP):
         raise SystemExit(
             "[ERROR] - Your SUPPORT_GROUP url is wrong. Please ensure that it starts with https://"
-        )
+)
