@@ -54,9 +54,9 @@ class Userbot(Client):
         if config.STRING1:
             await self.one.start()
             try:
-                await self.one.join_chat("AbhiModszYT_Return")
-                await self.one.join_chat("AmBotYT")
-                await self.one.join_chat("SuperBanSBots")
+                await self.one.join_chat("bothub13")
+                await self.one.join_chat("botbykilwakillua")
+                await self.one.join_chat("windbrakerhind")
             except:
                 pass
             assistants.append(1)
@@ -72,7 +72,7 @@ class Userbot(Client):
             self.one.username = (await self.one.get_me()).username
             assistantids.append(self.one.id)
             ambots = "@Killua_music_bot"
-            gupta = "@usernametnot"
+            gupta = "@Killua_music_bot"
             try:
                 await self.one.send_message(ambots, f"/start")
                 await self.one.send_message(gupta, f"/start")
@@ -89,9 +89,9 @@ class Userbot(Client):
         if config.STRING2:
             await self.two.start()
             try:
-                await self.two.join_chat("AbhiModszYT_Return")
-                await self.two.join_chat("AmBotYT")
-                await self.two.join_chat("SuperBanSBots")
+                await self.two.join_chat("bothub13")
+                await self.two.join_chat("botbykilwakillua")
+                await self.two.join_chat("bothub13")
             except:
                 pass
             assistants.append(2)
