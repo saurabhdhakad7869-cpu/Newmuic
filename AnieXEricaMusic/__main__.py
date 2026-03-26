@@ -1,6 +1,10 @@
 import asyncio
 import importlib
 
+# MUST be first: set event loop before any other imports (fixes Python 3.11 + uvloop)
+_loop = asyncio.new_event_loop()
+asyncio.set_event_loop(_loop)
+
 from pyrogram import idle
 from pytgcalls.exceptions import NoActiveGroupCall
 
@@ -43,7 +47,7 @@ async def init():
         await AMBOT.stream_call("https://te.legra.ph/file/29f784eb49d230ab62e9e.mp4")
     except NoActiveGroupCall:
         LOGGER("AnieXEricaMusic").error(
-            "Please turn on the videochat of your log group\channel.\n\nStopping Bot..."
+            "Please turn on the videochat of your log group\\channel.\\n\\nStopping Bot..."
         )
         exit()
     except:
